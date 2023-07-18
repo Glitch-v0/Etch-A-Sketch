@@ -1,0 +1,11 @@
+[id^="column"] {
+    background-color: aqua;
+    color: blue;
+    flex: 1; /* make the columns grow or shrink according to the available space */
+}
+
+div {
+    height: 100%;
+    width: 100%;
+  }
+  
