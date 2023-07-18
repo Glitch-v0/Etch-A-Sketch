@@ -10,12 +10,6 @@
 }
 
 .row {
-    margin: 10px;
-    border: 10px;
-    border-color: black;
-}
-#column {
-    display: flex;
-    flex-direction: row;
-    justify-content: safe center;
+    height: 60px; /* adjust as needed */
+    width: 60px; /* adjust as needed */
 }
