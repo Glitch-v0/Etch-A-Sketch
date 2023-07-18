@@ -1,11 +1,21 @@
 [id^="column"] {
-    background-color: aqua;
-    color: blue;
-    flex: 1; /* make the columns grow or shrink according to the available space */
+    /* background-color: rgb(188, 249, 255); */
+    color: rgb(0, 0, 0);
 }
 
-div {
-    height: 100%;
-    width: 100%;
-  }
-  
+#container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.row {
+    margin: 10px;
+    border: 10px;
+    border-color: black;
+}
+#column {
+    display: flex;
+    flex-direction: row;
+    justify-content: safe center;
+}
