@@ -1,3 +1,19 @@
+paintMode = false;
+// Add an event listener to the document
+document.addEventListener("contextmenu", function(e) {
+    // Prevent the default behavior of the event
+    e.preventDefault();
+    if(paintMode==false){
+        paintMode = true;
+    } else if (paintMode == true){
+        paintMode = false;
+    }
+  });
+
+document.addEventListener("contextmenu", function(e) {
+    // Prevent the default behavior of the event
+    e.preventDefault();
+  });
 let size = 12;
 function loadout(){
 // Creates a custom-sized group of divs
@@ -29,26 +45,29 @@ for (let i = 0; i < rows.length; i++) {
     let row = rows[i];
     row.style.width = `${window.innerWidth/size*0.45}px`;
     row.style.height = `${row.style.width}`;
+    
   }
 
 // Change color when moused over
 for(let div of rows){
+    // Add a listener for the mouseover event
     div.addEventListener("mouseover", function(){
-        console.log("Mouse is over the row");
-        // Generate a random number between 0 and 16777215
-        var randomNum = Math.floor(Math.random() * 16777215);
-
-        // Convert the number to a hexadecimal string
-        var randomColor = randomNum.toString(16);
-
-        // Prepend a # sign to the string
-        randomColor = "#" + randomColor;
-
-        // Use the random color as the background color
-        div.style.backgroundColor = randomColor;
-
-})
-    }}
+      if(paintMode==true)
+    {// Generate a random number between 0 and 16777215
+      var randomNum = Math.floor(Math.random() * 16777215);
+  
+      // Convert the number to a hexadecimal string
+      var randomColor = randomNum.toString(16);
+  
+      // Prepend a # sign to the string
+      randomColor = "#" + randomColor;
+  
+      // Use the random color as the background color
+      div.style.backgroundColor = randomColor;
+      div.style.caretColor = randomColor;}
+    });
+  }
+  }
 
 // Size Button
 const sizeButton = document.getElementById('size');
